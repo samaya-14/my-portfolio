@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samaya Keerthika | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <button class="dark-toggle">🌙</button>
+
+    <div class="logo">Samaya Keerthika</div>
+    <div class="menu-toggle">☰</div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero reveal">
+
+    <div class="hero-text">
+        <h1>Hi, I'm Samaya Keerthika</h1>
+        <p class="typing"></p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#" class="btn btn-outline">Download Resume</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about">
+
+    <div class="about-container">
+
+        <div class="about-img">
+            <img src="https://via.placeholder.com/200" alt="profile">
+        </div>
+
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am an AI & Data Science student passionate about building
+                real-world projects using Python, Power BI, and Machine Learning.
+            </p>
+
+            <div class="skills">
+                <span>Python</span>
+                <span>Power BI</span>
+                <span>Machine Learning</span>
+                <span>SQL</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="projects reveal">
+
+    <h2>My Projects</h2>
+
+    <div class="project-container">
+        <div class="project-card">
+        <img src="https://via.placeholder.com/300x180" alt="">
+        <h3>Apartment Management System</h3>
+        <p>Django-based system with authentication and payments.</p>
+    </div>
+
+    <div class="project-card">
+        <img src="https://via.placeholder.com/300x180" alt="">
+        <h3>Power BI Dashboard</h3>
+        <p>Interactive sales dashboard with KPIs.</p>
+    </div>
+
+    <div class="project-card">
+        <img src="https://via.placeholder.com/300x180" alt="">
+        <h3>ML Prediction Model</h3>
+        <p>Machine learning model for predictions.</p>
+    </div>
+
+</div>
+
+       
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact reveal">
+
+    <h2>Contact Me</h2>
+
+    <div class="contact-container">
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2026 Samaya Keerthika | All Rights Reserved</p>
+
+    <div class="footer-links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Email</a>
+    </div>
+</footer>
+<script>
+window.addEventListener("scroll", function () {
+    let elements = document.querySelectorAll(".reveal");
+
+    for (let i = 0; i < elements.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = elements[i].getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            elements[i].classList.add("active");
+        }
+    }
+});
+</script>
+<script>
+window.addEventListener("scroll", function () {
+
+    let sections = document.querySelectorAll("section");
+    let navLinks = document.querySelectorAll(".nav-links li a");
+
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute("id");
+
+        if(top >= offset && top < offset + height){
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                document.querySelector(".nav-links li a[href='#" + id + "']").classList.add("active");
+            });
+        }
+    });
+
+});
+</script>
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+</script>
+<script>
+const darkBtn = document.querySelector(".dark-toggle");
+
+darkBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        darkBtn.innerHTML = "☀️";
+    } else {
+        darkBtn.innerHTML = "🌙";
+    }
+});
+</script>
+<script>
+const text = "AI & Data Science Student | Data Analytics | Python | Power BI | Machine Learning";
+let index = 0;
+
+function typeEffect(){
+    if(index < text.length){
+        document.querySelector(".typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 70);
+    }
+}
+
+typeEffect();
+</script>
+<script>
+window.addEventListener("scroll", function(){
+
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    let scrolled = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+});
+</script>
+
+</body>
+</html>
