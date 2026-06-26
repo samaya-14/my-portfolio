@@ -380,3 +380,86 @@ h1, h2, h3{
 .btn{
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+.profiles{
+    text-align: center;
+    padding: 80px 20px;
+    background: #f5f7fb;
+}
+
+.profile-links{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.project-card .btn,
+.project-card .btn-outline{
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+.btn-linkedin{
+    background: white;
+    color: #0d47a1;
+    border: 2px solid #0d47a1;
+}
+.btn-linkedin:hover{
+    background: #0d47a1;
+    color: white;
+}
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar{
+        flex-direction: column;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* HERO */
+    .hero-text h1{
+        font-size: 28px;
+    }
+
+    .hero-text p{
+        font-size: 14px;
+    }
+
+    /* ABOUT */
+    .about-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* PROJECTS */
+    .project-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card{
+        width: 90%;
+    }
+
+    /* CONTACT */
+    .contact form{
+        width: 90%;
+    }
+}
