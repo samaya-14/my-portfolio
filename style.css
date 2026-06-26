@@ -38,14 +38,22 @@ body{
     display: flex;
     gap: 25px;
 }
-
 .nav-links li a{
-    position: relative;
+    color: white;
+    text-decoration: none;
     transition: 0.3s;
 }
 
+/* hover effect */
 .nav-links li a:hover{
     color: #ffdd57;
+}
+
+/* ACTIVE PAGE STYLE */
+.nav-links li a.active{
+    color: #ffdd57;
+    font-weight: bold;
+    border-bottom: 2px solid #ffdd57;
 }
 .nav-links li a::after{
     content: "";
